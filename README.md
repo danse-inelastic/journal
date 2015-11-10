@@ -1,4 +1,4 @@
-# pyre
-pyre by Michael Aivazis used in DANSE
+# journal
+pyre journal by Michael Aivazis used in DANSE
 
-This "core" branch is intended to be a minimal one with only the core functionalities.
+This package only contains journal.
