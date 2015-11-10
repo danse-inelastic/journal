@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+package_cloud push ${PKGCLOUD_USERNAME}/${PKGCLOUD_REPO}/ubuntu/trusty ../build/DEB/${PROJECT_NAME}-${VERSION}-${CPACK_PACKAGE_RELEASE}.x86_64.deb

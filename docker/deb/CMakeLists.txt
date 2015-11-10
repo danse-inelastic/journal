@@ -8,6 +8,7 @@ configure_file(build/run.in build/run)
 
 configure_file(test/Dockerfile.in test/Dockerfile)
 configure_file(test/run.in test/run)
+configure_file(test/upload.in test/upload)
 
 add_custom_target( 
   build-deb-deps
@@ -23,6 +24,8 @@ add_custom_target(
   )
 add_dependencies(build-deb build-deb-deps)
 
+# this can only run after the pkg is uploaded 
+# to github
 add_custom_target( 
   test-deb
   COMMAND bash run

@@ -1,3 +1,12 @@
+# To improve
+# * dependency items are declared at different places
+#   - This file two places DEP_DANSE_PKGS, CPACK_DEBIAN_PACKAGE_DEPENDS
+#   - File rpm.spec.in
+# * rpm and deb releases are treated differently:
+#   - rpm: source rpm
+#   - deb: binary deb
+# * upload-<> should also upload to github release site
+
 cmake_minimum_required (VERSION 2.6)
 project (journal)
 
@@ -11,10 +20,11 @@ set(RPM_APP_GROUP "Development/Tools")
 set(GITHUB_URL "https://github.com/danse-inelastic/journal")
 
 # this is released with danse.ins packages
-set (PARENT_PY_PKG "danse.ins")
-set (PARENT_GITHUB_URL "https://github.com/danse-inelastic/danse.ins")
-set (PARENT_VERSION "0.1")
-set (PARENT_RELEASE "0")
+set(DEP_DANSE_PKGS "danse.ins")
+
+# package repository at packagecloud
+set (PKGCLOUD_USERNAME "linjiao")
+set (PKGCLOUD_REPO "danse_ins")
 
 # variables
 set (PYBINDING_NAME "${PROJECT_NAME}module")
