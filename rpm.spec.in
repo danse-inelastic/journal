@@ -11,11 +11,8 @@ BuildRequires:  gcc-c++
 BuildRequires:	cmake > 2.6
 BuildRequires:	make
 BuildRequires:  python-devel
-BuildRequires:  numpy
 
 Requires: python
-Requires: numpy
-Requires: danse.ins
 
 %description
 @CPACK_PACKAGE_SUMMARY@
