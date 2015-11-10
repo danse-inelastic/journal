@@ -42,6 +42,7 @@ enable_testing()
 add_subdirectory(lib)
 add_subdirectory(pyext)
 add_subdirectory(python)
+add_subdirectory(bin)
 add_subdirectory(tests)
 
 # packaging
