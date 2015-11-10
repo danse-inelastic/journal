@@ -43,6 +43,7 @@ add_subdirectory(lib)
 add_subdirectory(pyext)
 add_subdirectory(python)
 add_subdirectory(bin)
+add_subdirectory(etc)
 add_subdirectory(tests)
 
 # packaging
