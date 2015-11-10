@@ -10,6 +10,12 @@ set(LICENSE "BSD")
 set(RPM_APP_GROUP "Development/Tools")
 set(GITHUB_URL "https://github.com/danse-inelastic/journal")
 
+# this is released with danse.ins packages
+set (PARENT_PY_PKG "danse.ins")
+set (PARENT_GITHUB_URL "https://github.com/danse-inelastic/danse.ins")
+set (PARENT_VERSION "0.1")
+set (PARENT_RELEASE "0")
+
 # variables
 set (PYBINDING_NAME "${PROJECT_NAME}module")
 set (LIB_NAME "${PROJECT_NAME}")
@@ -61,7 +67,7 @@ set(CPACK_PACKAGE_VENDOR ${VENDOR})
 set(CPACK_PACKAGING_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX})
 set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}-${CPACK_PACKAGE_RELEASE}.${CMAKE_SYSTEM_PROCESSOR}")
 set(CPACK_RPM_PACKAGE_REQUIRES "cmake")
-set(CPACK_DEBIAN_PACKAGE_DEPENDS "python")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "python danse.ins")
 include(CPack)
 
 # source tar ball
