@@ -23,8 +23,8 @@ set(GITHUB_URL "https://github.com/danse-inelastic/journal")
 set(DEP_DANSE_PKGS "danse.ins")
 
 # package repository at packagecloud
-set (PKGCLOUD_USERNAME "linjiao")
-set (PKGCLOUD_REPO "danse_ins")
+set (PKGCLOUD_USERNAME "danse")
+set (PKGCLOUD_REPO "ins")
 
 # packaging with the help of docker and packagecloud
 # package repository at packagecloud
