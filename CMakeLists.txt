@@ -22,14 +22,10 @@ set(GITHUB_URL "https://github.com/danse-inelastic/journal")
 # this is released with danse.ins packages
 set(DEP_DANSE_PKGS "danse.ins")
 
+# packaging with the help of docker and packagecloud
 # package repository at packagecloud
 set (PKGCLOUD_USERNAME "danse")
 set (PKGCLOUD_REPO "ins")
-
-# packaging with the help of docker and packagecloud
-# package repository at packagecloud
-set (PKGCLOUD_USERNAME "linjiao")
-set (PKGCLOUD_REPO "danse_ins")
 # dependencies
 set (DOCKER_PKGING_DEPS_DEB "danse.ins")
 set (DOCKER_PKGING_DEPS_RPM "danse.ins")
