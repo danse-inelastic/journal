@@ -5,7 +5,6 @@
 # * rpm and deb releases are treated differently:
 #   - rpm: source rpm
 #   - deb: binary deb
-# * upload-<> should also upload to github release site
 
 cmake_minimum_required (VERSION 2.6)
 project (journal)
