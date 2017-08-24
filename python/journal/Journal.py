@@ -53,7 +53,7 @@ class Journal(object):
         return
 
 
-# version
+#  version
 __id__ = "$Id: Journal.py,v 1.1.1.1 2006-11-27 00:09:34 aivazis Exp $"
 
 #  End of file 
