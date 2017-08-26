@@ -20,7 +20,7 @@ class TextFile(File):
 
     def _write(self, message):
         for line in message:
-            self.file.write("%s\n" % line)
+            self.file.write("{0!s}\n".format(line))
 
         return
 

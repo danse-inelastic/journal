@@ -11,6 +11,7 @@
 #  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 
 
+from __future__ import print_function
 
 from Device import Device
 
@@ -20,7 +21,7 @@ class Console(Device):
 
     def _write(self, text):
         for line in text:
-            print line
+            print(line)
 
         return
 
