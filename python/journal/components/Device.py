@@ -26,7 +26,7 @@ class Device(Component):
 
 
     def createDevice(self):
-        raise NotImplementedError("class '%s' must override 'device'" % self.__class__.__name__)
+        raise NotImplementedError("class '{0}' must override 'device'".fomrat(self.__class__.__name__))
 
 
     def __init__(self, name):

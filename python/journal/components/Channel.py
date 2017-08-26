@@ -39,7 +39,7 @@ class Channel(Component):
             ]
 
         listing += [
-            ("%s.%s" % (nodename, name), value)
+            ("{0!s}.{1!s}".format(nodename, name), value)
             for nodename, node in registry.facilities.iteritems()
             for name, value in self._listing(node)
             ]
