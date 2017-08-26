@@ -33,15 +33,15 @@ def main():
 
             # port used by the remote server
             port = pyre.inventory.int("port", default=50000)
-            
+ 
             # delay before client is spawned
             delay = pyre.inventory.int("delay", default=5)
-            
+
             # [client, server, both]
             mode = pyre.inventory.str(
                 "mode", default="both",
                 validator=pyre.inventory.choice(["server", "client", "both"]))
-            
+ 
 
         def onServer(self):
             name = 'journal'
@@ -82,8 +82,8 @@ def main():
             journal.remote(self.key, self.port, self.host)
 
             for idx in range(5):
-                info = journal.debug("test-%02d" % idx).activate()
-                info.log("test %02d: this a sample message" % idx)
+                info = journal.debug("test-{:02d}".format(idx)).activate()
+                info.log("test {:02d}: this a sample message".format(idx))
 
             return
 
@@ -122,7 +122,7 @@ if __name__ == '__main__':
     import journal
     journal.info("remote").activate()
     journal.debug("remote").activate()
-    
+
     # invoke the application shell
     main()
 
@@ -130,4 +130,4 @@ if __name__ == '__main__':
 # version
 __id__ = "$Id: remote.py,v 1.1.1.1 2006-11-27 00:09:40 aivazis Exp $"
 
-# End of file 
+# End of file

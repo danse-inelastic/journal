@@ -15,15 +15,15 @@ def test():
     import jtest
     from jtest import jtest as jtestmodule
 
-    print "copyright information:"
-    print "   ", jtest.copyright()
-    print "   ", jtestmodule.copyright()
+    print("copyright information:")
+    print("   ", jtest.copyright())
+    print("   ", jtestmodule.copyright())
 
-    print
-    print "module information:"
-    print "    file:", jtestmodule.__file__
-    print "    doc:", jtestmodule.__doc__
-    print "    contents:", dir(jtestmodule)
+    print()
+    print("module information:")
+    print("    file:", jtestmodule.__file__)
+    print("    doc:", jtestmodule.__doc__)
+    print("    contents:", dir(jtestmodule))
 
     return
 

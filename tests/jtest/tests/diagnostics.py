@@ -11,6 +11,8 @@
 #  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 
 
+from __future__ import print_function
+
 def test():
     import journal
     # force the initialization
@@ -18,18 +20,18 @@ def test():
 
     from jtest import jtest
 
-    print " ** testing informationals"
+    print(" ** testing informationals")
     info = journal.info("jtest")
     info.activate()
     info.log("this is an info from python")
     jtest.info("jtest")
 
-    print " ** testing warnings"
+    print(" ** testing warnings")
     warning = journal.warning("jtest")
     warning.log("this a warning from python")
     #jtest.warning("jtest")
 
-    print " ** testing errors"
+    print(" ** testing errors")
     error = journal.error("jtest")
     error.log("this an error from python")
     #jtest.error("jtest")
