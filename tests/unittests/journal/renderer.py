@@ -23,11 +23,11 @@ class Logger(Renderer):
         meta["time"] = time.asctime()
 
         str = [
-            '%(time)s -- %(facility)s [%(severity)s]' % meta
+            '{time} -- {facility} [{severity}]'.format(**meta)
             ]
 
         for line in entry.text:
-            str.append(self.format % line)
+            str.append(self.format.format(line))
 
         return str
 
