@@ -37,11 +37,11 @@ class File(Device):
         if not os.path.exists(dir): os.makedirs(dir)
 
         #
-        logfile = file(filename, "a", 0)
+        logfile = open(filename, "a", 0)
 
         import time
         
-        print >> logfile, " ** MARK: opened by %s on %s" % (os.getpid(), time.ctime())
+        print(" ** MARK: opened by {0} on {1}".format(os.getpid(), time.ctime()), file=logfile) 
 
         from journal.devices.File import File
         return File(logfile)
