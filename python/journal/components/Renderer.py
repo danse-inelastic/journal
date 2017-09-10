@@ -23,13 +23,13 @@ class Renderer(Component):
 
         header = pyre.inventory.str(
             "header",
-            default=" >> %(filename)s:%(line)s:%(function)s\n -- %(facility)s(%(severity)s)")
+            default=" >> {filename}:{line}:{function}\n -- {facility}({severity})")
         header.meta['tip'] = "the first line of the generated message"
 
         footer = pyre.inventory.str("footer", default="")
         footer.meta['tip'] = "the last line of the generated message"
 
-        format = pyre.inventory.str("format", default=" -- %s")
+        format = pyre.inventory.str("format", default=" -- {0!s}")
         format.meta['tip'] = "the format string used to render the message"
 
 

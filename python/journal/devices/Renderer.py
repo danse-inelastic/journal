@@ -25,23 +25,23 @@ class Renderer(object):
             if self.trimFilename and len(filename) > 53:
                 filename = filename[0:20] + "..." + filename[-30:]
                 meta["filename"] = filename
-            text.append(self.header % meta)
+            text.append(self.header.format(**meta))
 
         for line in entry.text:
-            text.append(self.format % line)
+            text.append(self.format.format(line))
 
         if self.footer:
-            text.append(self.footer % meta)
+            text.append(self.footer.format(meta))
 
         return text
 
 
     def __init__(self, header=None, format=None, footer=None):
         if header is None:
-            header = " >> %(filename)s:%(line)s:%(function)s\n >> %(facility)s(%(severity)s)"
+            header = " >> {filename}:{line}:{function}\n >> {facility}({severity})"
 
         if format is None:
-            format = " -- %s"
+            format = " -- {0!s}"
 
         if footer is None:
             footer = ""
