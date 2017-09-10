@@ -26,7 +26,7 @@ class File(Device):
 
     def _write(self, message):
         for line in message:
-            print >> self.file, line
+            print(line, file=self.file) 
 
         self.file.flush()
 
