@@ -174,7 +174,6 @@ else:
 register()
         
 # version
-__version__ = "0.8"
-__id__ = "$Id: __init__.py,v 1.2 2008-04-13 03:59:03 aivazis Exp $"
+__version__ = "0.8.2"
 
 #  End of file 
