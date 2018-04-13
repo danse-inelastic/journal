@@ -75,6 +75,7 @@ execute_process(
 include_directories(${CMAKE_BINARY_DIR}/lib/include)
 # compile shared lib
 add_library ( ${LIB_NAME} SHARED ${SRC_FILES} ${INC_FILES} )
+set_target_properties(${LIB_NAME} PROPERTIES MACOSX_RPATH "ON")
 
 # install headers
 install (
