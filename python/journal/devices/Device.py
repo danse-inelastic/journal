@@ -23,7 +23,7 @@ class Device(object):
 
     def __init__(self, renderer=None):
         if renderer is None:
-            from Renderer import Renderer
+            from .Renderer import Renderer
             renderer = Renderer()
 
         self.renderer = renderer

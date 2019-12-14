@@ -21,7 +21,7 @@ class JournalFacility(Facility):
     def __init__(self, factory=None, args=[]):
         if factory is None:
             args = []
-            from Journal import Journal as factory
+            from .Journal import Journal as factory
             
         Facility.__init__(self, name="journal", factory=factory, args=args)
         return

@@ -13,7 +13,7 @@
 
 
 import journal
-from Index import Index
+from .Index import Index
 
 
 class Warning(Index):
@@ -27,7 +27,7 @@ class Warning(Index):
 
 
     def _proxyState(self, name):
-        from ProxyState import ProxyState
+        from .ProxyState import ProxyState
         return ProxyState(journal._journal.warning(name))
 
 

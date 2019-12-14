@@ -26,27 +26,44 @@ extern "C"
 void
 init_journal()
 {
-    // create the module and add the functions
-    PyObject * m = Py_InitModule4(
-        "_journal", pyjournal_methods,
-        pyjournal_module__doc__, 0, PYTHON_API_VERSION);
+#if PY_MAJOR_VERSION >= 3
+  static struct PyModuleDef moduledef = \
+    {
+     PyModuleDef_HEAD_INIT,           //
+     "_journal",                      //name
+     pyjournal_module__doc__,         //doc
+     -1,                              //size 
+     pyjournal_methods,               //methods 
+     NULL,                            //relad
+     NULL,                            //traverse
+     NULL,                            //clear
+     NULL,                            //free
+    };
+#endif
 
-    // get its dictionary
-    PyObject * d = PyModule_GetDict(m);
+  PyObject *m;
 
-    // check for errors
-    if (PyErr_Occurred()) {
-        Py_FatalError("can't initialize module journal");
-    }
+  // create the module and add the functions
+#if PY_MAJOR_VERSION >= 3
+  m = PyModule_Create(&moduledef);
+#else
+  PyObject * m = Py_InitModule4
+    ("_journal", pyjournal_methods,
+     pyjournal_module__doc__, 0, PYTHON_API_VERSION);
+#endif
 
-    // install the module exceptions
-    pyjournal_runtimeError = PyErr_NewException("journal.runtime", 0, 0);
-    PyDict_SetItemString(d, "RuntimeException", pyjournal_runtimeError);
+  // get its dictionary
+  PyObject * d = PyModule_GetDict(m);
 
-    return;
+  // check for errors
+  if (PyErr_Occurred()) {
+    Py_FatalError("can't initialize module journal");
+  }
+
+  // install the module exceptions
+  pyjournal_runtimeError = PyErr_NewException("journal.runtime", 0, 0);
+  PyDict_SetItemString(d, "RuntimeException", pyjournal_runtimeError);
+  return;
 }
-
-// version
-// $Id: _journalmodule.cc,v 1.1.1.1 2006-11-27 00:09:36 aivazis Exp $
 
 // End of file

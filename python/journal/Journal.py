@@ -21,7 +21,7 @@ class Journal(object):
 
 
     def entry(self):
-        from diagnostics.Entry import Entry
+        from .diagnostics.Entry import Entry
         return Entry()
 
 
@@ -42,7 +42,7 @@ class Journal(object):
         self.name = name
 
         if device is None:
-            from devices.Console import Console
+            from .devices.Console import Console
             device = Console()
 
         self.device = device

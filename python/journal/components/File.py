@@ -13,7 +13,7 @@
 
 from __future__ import print_function
 
-from Device import Device
+from .Device import Device
 
 
 class File(Device):

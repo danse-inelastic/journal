@@ -20,7 +20,7 @@ class DeviceFacility(Facility):
     def __init__(self, factory=None, args=[]):
         if factory is None:
             args = []
-            from Console import Console as factory
+            from .Console import Console as factory
 
         Facility.__init__(self, name="device", factory=factory, args=args)
 
