@@ -21,26 +21,24 @@
 
 char pyjournal_module__doc__[] = "";
 
-// Initialization function for the module (*must* be called init_journal)
-extern "C"
-void
-init_journal()
-{
 #if PY_MAJOR_VERSION >= 3
-  static struct PyModuleDef moduledef = \
-    {
-     PyModuleDef_HEAD_INIT,           //
-     "_journal",                      //name
-     pyjournal_module__doc__,         //doc
-     -1,                              //size 
-     pyjournal_methods,               //methods 
-     NULL,                            //relad
-     NULL,                            //traverse
-     NULL,                            //clear
-     NULL,                            //free
-    };
+static struct PyModuleDef moduledef = \
+  {
+    PyModuleDef_HEAD_INIT,           //
+    "_journal",                      //name
+    pyjournal_module__doc__,         //doc
+    -1,                              //size 
+    pyjournal_methods,               //methods 
+    NULL,                            //relad
+    NULL,                            //traverse
+    NULL,                            //clear
+    NULL,                            //free
+  };
 #endif
 
+static PyObject *
+moduleinit(void)
+{
   PyObject *m;
 
   // create the module and add the functions
@@ -63,7 +61,21 @@ init_journal()
   // install the module exceptions
   pyjournal_runtimeError = PyErr_NewException("journal.runtime", 0, 0);
   PyDict_SetItemString(d, "RuntimeException", pyjournal_runtimeError);
-  return;
+  return m;
 }
+
+#if PY_MAJOR_VERSION < 3
+    PyMODINIT_FUNC
+    init_journal(void)
+    {
+        moduleinit();
+    }
+#else
+    PyMODINIT_FUNC
+    PyInit__journal(void)
+    {
+        return moduleinit();
+    }
+#endif
 
 // End of file
