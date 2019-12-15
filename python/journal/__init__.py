@@ -159,8 +159,7 @@ _theJournal = None
 # initialize
 try:
     # print " ** __init__.py: importing _journal"
-    # import _journal
-    print("hello")
+    from . import _journal
 except ImportError:
     hasProxy = False
     msg = info("journal")
@@ -168,14 +167,12 @@ except ImportError:
     msg.log("control of diagnostics from extension modules is unavailable")
 else:
     # print " ** __init__.py: initializing C++ bindings"
-    # _journal.initialize(journal())
+    _journal.initialize(journal())
     hasProxy = True
 
 # register the known indices
 register()
 
-# version
 __version__ = "0.8"
-__id__ = "$Id: __init__.py,v 1.2 2008-04-13 03:59:03 aivazis Exp $"
 
 #  End of file
