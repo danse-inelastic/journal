@@ -172,7 +172,8 @@ else:
 
 # register the known indices
 register()
-
-__version__ = "0.8"
+        
+# version
+__version__ = "0.8.2"
 
 #  End of file

@@ -9,7 +9,7 @@
 cmake_minimum_required (VERSION 2.6)
 project (journal)
 
-set(VERSION "0.8")
+set(VERSION "0.8.2")
 set(AUTHOR "Michael Aivazis")
 set(AUTHOR_EMAILE "")
 set(VENDOR "DANSE")

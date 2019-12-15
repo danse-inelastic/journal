@@ -76,6 +76,11 @@ include_directories(${CMAKE_BINARY_DIR}/lib/include)
 # compile shared lib
 add_library ( ${LIB_NAME} SHARED ${SRC_FILES} ${INC_FILES} )
 
+# Mac OS X
+if(APPLE)
+  set_target_properties(${LIB_NAME} PROPERTIES MACOSX_RPATH "ON")
+endif()
+
 # install headers
 install (
   DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/include/${PROJECT_NAME}/
