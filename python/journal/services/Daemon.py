@@ -18,7 +18,7 @@ class Daemon(ServiceDaemon):
 
 
     def createComponent(self):
-        from JournalService import JournalService
+        from .JournalService import JournalService
         component = JournalService()
         return component
         

@@ -9,23 +9,25 @@
 #  <LicenseText>
 # 
 #  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# 
+#
+
+from __future__ import print_function 
 
 def test():
     import journal
     from jtest import jtest
 
-    print " ** testing C++ informationals"
+    print(" ** testing C++ informationals")
     info = journal.info("jtest")
     info.activate()
     jtest.info("jtest")
 
-    print " ** testing C++ warnings"
+    print(" ** testing C++ warnings")
     warning = journal.warning("jtest")
     #warning.deactivate()
     warning = jtest.warning("jtest")
 
-    print " ** testing C++ errors"
+    print(" ** testing C++ errors")
     error = journal.error("jtest")
     #error.deactivate()
     jtest.error("jtest")

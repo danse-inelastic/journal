@@ -23,7 +23,7 @@ class Device(object):
 
     def __init__(self, renderer=None):
         if renderer is None:
-            from Renderer import Renderer
+            from .Renderer import Renderer
             renderer = Renderer()
 
         self.renderer = renderer
@@ -32,7 +32,7 @@ class Device(object):
 
 
     def _write(self, entry):
-        raise NotImplementedError("class '%s' must override '_write'" % self.__class__.__name__)
+        raise NotImplementedError("class '{0!s}' must override '_write'".format(self.__class__.__name__))
 
 
 # version

@@ -19,14 +19,14 @@ class Device(Component):
 
     class Inventory(Component.Inventory):
 
-        from RendererFacility import RendererFacility
+        from .RendererFacility import RendererFacility
 
         renderer = RendererFacility()
         renderer.meta['tip'] = 'the facility that controls how the messages are formatted'
 
 
     def createDevice(self):
-        raise NotImplementedError("class '%s' must override 'device'" % self.__class__.__name__)
+        raise NotImplementedError("class '{0}' must override 'device'".fomrat(self.__class__.__name__))
 
 
     def __init__(self, name):

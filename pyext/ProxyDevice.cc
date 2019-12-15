@@ -48,7 +48,7 @@ void ProxyDevice::record(const entry_t & entry) {
             // << " ## ProxyDevice::record: converting line: {"
             // << (*line) << "}"
             // << std::endl;
-        PyObject * py_line = PyString_FromStringAndSize((*line).c_str(), (*line).size());
+        PyObject * py_line = PyUnicode_FromStringAndSize((*line).c_str(), (*line).size());
         PyObject * py_none = PyObject_CallMethod(py_entry, "line", "O", py_line);
         Py_DECREF(py_none);
         Py_DECREF(py_line);
@@ -69,8 +69,8 @@ void ProxyDevice::record(const entry_t & entry) {
         Entry::string_t value = (*meta).second;
 
         // std::cout << "{" << key << "=" << value << "}";
-        PyObject * py_key = PyString_FromStringAndSize(key.c_str(), key.size());
-        PyObject * py_value = PyString_FromStringAndSize(value.c_str(), value.size());
+        PyObject * py_key = PyUnicode_FromStringAndSize(key.c_str(), key.size());
+        PyObject * py_value = PyUnicode_FromStringAndSize(value.c_str(), value.size());
 
         PyDict_SetItem(py_meta, py_key, py_value);
     }

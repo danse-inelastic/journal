@@ -9,22 +9,24 @@
 #  <LicenseText>
 # 
 #  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# 
+#
+
+from __future__ import print_function 
 
 if __name__ == "__main__":
 
     import journal
-    print journal.copyright()
+    print(journal.copyright())
 
     info = journal.info("info")
-    print "state of %s(%s): %s" % (info.facility, info.severity, info.state)
+    print("state of {0!s}({1!s}): {2!s}".format(info.facility, info.severity, info.state))
     info.state = True
 
     info = journal.info("info")
-    print "state of %s(%s): %s" % (info.facility, info.severity, info.state)
+    print("state of {0!s}({1!s}): {2!s}".format(info.facility, info.severity, info.state))
     info.log("hello")
 
-    print "info facilities:", journal.infoIndex().facilities()
+    print("info facilities:", journal.infoIndex().facilities())
 
 
 # version

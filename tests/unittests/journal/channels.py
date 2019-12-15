@@ -11,10 +11,12 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
 
+from __future__ import print_function
+
 import journal
-print journal.journal().channels()
+print(journal.journal().channels())
 
 # version
 __id__ = "$Id: channels.py,v 1.1.1.1 2006-11-27 00:09:40 aivazis Exp $"
 
-# End of file 
+# End of file

@@ -12,7 +12,7 @@
 #
 
 
-from Device import Device
+from .Device import Device
 
 
 class Remote(Device):
@@ -21,8 +21,8 @@ class Remote(Device):
     class Inventory(Device.Inventory):
 
         import pyre.inventory
-        from NetRenderer import NetRenderer
-        from RendererFacility import RendererFacility
+        from .NetRenderer import NetRenderer
+        from .RendererFacility import RendererFacility
 
         key = pyre.inventory.str("key")
         key.meta['tip'] = (

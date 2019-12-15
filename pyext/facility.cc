@@ -13,6 +13,7 @@
 
 #include <portinfo>
 #include <Python.h>
+#include "capsulethunk.h"
 
 #include "facility.h"
 
@@ -35,7 +36,7 @@ PyObject * pyjournal_firewall(PyObject *, PyObject * args)
     journal::SeverityFirewall::state_t * state = &journal::SeverityFirewall::lookup(facility);
 
     // return
-    return PyCObject_FromVoidPtr(state, 0);
+    return PyCapsule_New(state, "journal_state", 0);
 }
     
 // debug
@@ -55,7 +56,7 @@ PyObject * pyjournal_debug(PyObject *, PyObject * args)
     journal::SeverityDebug::state_t * state = &journal::SeverityDebug::lookup(facility);
 
     // return
-    return PyCObject_FromVoidPtr(state, 0);
+    return PyCapsule_New(state, "journal_state", 0);
 }
     
 // info
@@ -75,7 +76,7 @@ PyObject * pyjournal_info(PyObject *, PyObject * args)
     journal::SeverityInfo::state_t * state = &journal::SeverityInfo::lookup(facility);
 
     // return
-    return PyCObject_FromVoidPtr(state, 0);
+    return PyCapsule_New(state, "journal_state", 0);
 }
     
 // warning
@@ -95,7 +96,7 @@ PyObject * pyjournal_warning(PyObject *, PyObject * args)
     journal::SeverityWarning::state_t * state = &journal::SeverityWarning::lookup(facility);
 
     // return
-    return PyCObject_FromVoidPtr(state, 0);
+    return PyCapsule_New(state, "journal_state", 0);
 }
     
 // error
@@ -115,7 +116,7 @@ PyObject * pyjournal_error(PyObject *, PyObject * args)
     journal::SeverityError::state_t * state = &journal::SeverityError::lookup(facility);
 
     // return
-    return PyCObject_FromVoidPtr(state, 0);
+    return PyCapsule_New(state, "journal_state", 0);
 }
     
 // version

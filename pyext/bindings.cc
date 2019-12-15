@@ -53,7 +53,4 @@ struct PyMethodDef pyjournal_methods[] = {
     {0, 0}
 };
 
-// version
-// $Id: bindings.cc,v 1.1.1.1 2006-11-27 00:09:36 aivazis Exp $
-
 // End of file

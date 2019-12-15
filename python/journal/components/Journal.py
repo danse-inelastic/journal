@@ -21,8 +21,8 @@ class Journal(Component):
     class Inventory(Component.Inventory):
 
 
-        from ChannelFacility import ChannelFacility
-        from DeviceFacility import DeviceFacility
+        from .ChannelFacility import ChannelFacility
+        from .DeviceFacility import DeviceFacility
 
         error = ChannelFacility("error")
         error.meta['tip'] = 'controls wchich error messages get printed'

@@ -13,6 +13,7 @@
 
 #include <portinfo>
 #include <Python.h>
+#include "capsulethunk.h"
 
 #include "state.h"
 
@@ -32,7 +33,7 @@ PyObject * pyjournal_getState(PyObject *, PyObject * args)
     }
 
     journal::Facility * state 
-        = (journal::Facility *) PyCObject_AsVoidPtr(py_state);
+      = (journal::Facility *) PyCapsule_GetPointer(py_state, "journal_state");
 
     bool value = state->state();
 
@@ -55,7 +56,7 @@ PyObject * pyjournal_setState(PyObject *, PyObject * args)
     }
 
     journal::Facility * state 
-        = (journal::Facility *) PyCObject_AsVoidPtr(py_state);
+      = (journal::Facility *) PyCapsule_GetPointer(py_state, "journal_state");
 
     state->state(value);
 
@@ -79,7 +80,7 @@ PyObject * pyjournal_activate(PyObject *, PyObject * args)
     }
 
     journal::Facility * state 
-        = (journal::Facility *) PyCObject_AsVoidPtr(py_state);
+      = (journal::Facility *) PyCapsule_GetPointer(py_state, "journal_state");
 
     state->state(true);
 
@@ -103,7 +104,7 @@ PyObject * pyjournal_deactivate(PyObject *, PyObject * args)
     }
 
     journal::Facility * state 
-        = (journal::Facility *) PyCObject_AsVoidPtr(py_state);
+      = (journal::Facility *) PyCapsule_GetPointer(py_state, "journal_state");
 
     state->state(false);
 
@@ -127,7 +128,7 @@ PyObject * pyjournal_flip(PyObject *, PyObject * args)
     }
 
     journal::Facility * state 
-        = (journal::Facility *) PyCObject_AsVoidPtr(py_state);
+      = (journal::Facility *) PyCapsule_GetPointer(py_state, "journal_state");
 
     state->state(state->state() ^ true);
 
@@ -135,8 +136,5 @@ PyObject * pyjournal_flip(PyObject *, PyObject * args)
     Py_INCREF(Py_None);
     return Py_None;
 }
-    
-// version
-// $Id: state.cc,v 1.1.1.1 2006-11-27 00:09:37 aivazis Exp $
 
 // End of file

@@ -21,7 +21,7 @@ class RendererFacility(Facility):
 
         if factory is None:
             args = []
-            from Renderer import Renderer as factory
+            from .Renderer import Renderer as factory
             
         Facility.__init__(self, name="renderer", factory=factory, args=args)
         return

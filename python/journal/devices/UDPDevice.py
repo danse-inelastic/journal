@@ -12,7 +12,7 @@
 #
 
 
-from Device import Device
+from .Device import Device
 
 
 class UDPDevice(Device):
@@ -27,7 +27,7 @@ class UDPDevice(Device):
 
     def __init__(self, key, port, host=''):
         import socket
-        from NetRenderer import NetRenderer
+        from .NetRenderer import NetRenderer
 
         Device.__init__(self, NetRenderer())
 
