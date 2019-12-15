@@ -39,7 +39,7 @@ set (CONDA_PKGING_BUILD_DEPS "python danse.ins")
 set (CONDA_PKGING_RUN_DEPS "python danse.ins")
 
 # variables
-set (PYBINDING_NAME "${PROJECT_NAME}module")
+set (PYBINDING_NAME "${PROJECT_NAME}")
 set (LIB_NAME "${PROJECT_NAME}")
 set (PKG_NAME "${PROJECT_NAME}")
 
