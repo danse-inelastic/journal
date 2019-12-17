@@ -45,7 +45,7 @@ moduleinit(void)
 #if PY_MAJOR_VERSION >= 3
   m = PyModule_Create(&moduledef);
 #else
-  PyObject * m = Py_InitModule4
+  m = Py_InitModule4
     ("_journal", pyjournal_methods,
      pyjournal_module__doc__, 0, PYTHON_API_VERSION);
 #endif
